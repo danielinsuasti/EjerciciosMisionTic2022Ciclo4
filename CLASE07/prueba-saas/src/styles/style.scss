@@ -1,0 +1,20 @@
+@import './colors.scss';
+@import './mixins.scss';
+
+
+// .fondoNegro {
+//     background-color: black;
+//     color: $miColor2;
+// }
+
+.fondoNegro{
+    @include fondoDiv(black, $miColor2, $miColor3)
+}
+
+.fondoAzul{
+    @include fondoDiv($miColor3, $miColor2, black)
+}
+
+.fondoVerde{
+    @include fondoDiv($miColor2, $miColor1, black)
+}
