@@ -1,0 +1,151 @@
+{
+	"info": {
+		"_postman_id": "ceba63cc-e56c-487a-a0e9-935589a2d8fa",
+		"name": "Ciclo4-Mern-Students-Grupo21",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:4000/students",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/students",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:4000/students/create-student",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Student12",
+							"type": "text"
+						},
+						{
+							"key": "rollno",
+							"value": "654",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "asdfasdf@asdsadf.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4000/students/create-student",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"students",
+						"create-student"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:4000/students/edit-student/6195a12f8b88c10c14d42953",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/students/edit-student/6195a12f8b88c10c14d42953",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"students",
+						"edit-student",
+						"6195a12f8b88c10c14d42953"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:4000/students/update-student/6195a0478b88c10c14d4294c",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "New Student",
+							"type": "text"
+						},
+						{
+							"key": "rollno",
+							"value": "22",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "fffff@ffff.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4000/students/update-student/6195a0478b88c10c14d4294c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"students",
+						"update-student",
+						"6195a0478b88c10c14d4294c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:4000/students/delete-student/61959fe58b88c10c14d4294a",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/students/delete-student/61959fe58b88c10c14d4294a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"students",
+						"delete-student",
+						"61959fe58b88c10c14d4294a"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
