@@ -1,7 +1,7 @@
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import './styles/style.css';
-import Login from './pages/Login';
-import Registro from './pages/Registro';
+import Login from './pages/auth/Login';
+import Registro from './pages/auth/Registro';
 import Admin from './pages/admin/Admin';
 import Index from './pages/Index';
 import PublicLayout from './layouts/PublicLayout';
