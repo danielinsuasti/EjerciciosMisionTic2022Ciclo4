@@ -2,60 +2,91 @@ import React, {useEffect, useState } from 'react'
 
 
 const Articulos = () => {
-    const[edad, setEdad] = useState(0);
-    const[esMenorDeEdad, setEsMenorDeEdad] = useState(false);
-    const[mostrarCamposAdicionales, setMostrarCamposAdicionales] = useState(false);
-
-    useEffect(()=>{
-        if(edad >= 18){
-            setEsMenorDeEdad(false)
-
-        }else{
-            setEsMenorDeEdad(true)
-        }
-    },[edad])
-
+    const [mostrarTabla, setMostrarTabla] = useState(true);
+    const [textoBoton, setTextoBoton] = useState('Crear Nuevo')
     
+    useEffect(()=> {
+        if(mostrarTabla){
+            setTextoBoton('Crear Nuevo')
+        }else{
+            setTextoBoton('Mostrar Todos')
+        }
+    }, [mostrarTabla])
+
+
     return (
-      <form className="flex flex-col">
-        <h2>Formulario Creación de Articulos</h2>
-        <label htmlFor="edad">
-          Por favor ingrese su edad
-          <input
-            value={edad}
-            onChange={(e) => setEdad(e.target.value)}
-            className="border border-gray-600"
-            name="edad"
-            type="number"
-          />
-        </label>
+      <div className = 'flex h-full w-full flex-col items-center justify-start p-8'>
+          <div className ='flex flex-col'>
+            <h2 className = 'text-3xl font-extrabold text-gray-900'>
+                PAGINA DE ADMINISTRACION DE ARTICULOS
+            </h2>
 
-        {esMenorDeEdad ? (
-          <span className="text-3xl text-red-500">
-            !Usted es menor de edad, no puede hacer pagos!
-          </span>
-        ) : (
-          <span className="text-3xl text-green-500">
-            !Usted es MAYOR de edad, SI puede hacer pagos!
-          </span>
-        )}  
+            <button
+            onClick={() => setMostrarTabla(!mostrarTabla)}
+            className="text-white bg-indigo-500 p-5 rounded-full m-6 w-28 self-end"
+            >
+            {textoBoton}
+            </button>            
 
-        <button type="button" onClick = {() => setMostrarCamposAdicionales(!mostrarCamposAdicionales)} className = "text-white bg-indigo-500" >
-            Mostrar Campos Adicionales
-        </button>
-
-        {mostrarCamposAdicionales && (
-            <div>
-                <input className = 'border bg-gray-400 my-2 p-3 'type="text" placeholder = 'Dato nuevo'  />
-                <input className = 'border bg-gray-400 my-2 p-3 'type="text" placeholder = 'Dato nuevo'  />
-                <input className = 'border bg-gray-400 my-2 p-3 'type="text" placeholder = 'Dato nuevo'  />
-                <input className = 'border bg-gray-400 my-2 p-3 'type="text" placeholder = 'Dato nuevo'  />
-                <input className = 'border bg-gray-400 my-2 p-3 'type="text" placeholder = 'Dato nuevo'  />                
-            </div>
-        )}    
-
-      </form>
+          </div>
+          {mostrarTabla ? <TablaArticulos /> : <FormularioCreacionArticulos />}
+        
+      </div>
     );
 }
+
+const TablaArticulos=()=>{
+    return (
+        <div className = 'flex flex-col items-center justify-center'>
+            <h2 className = 'text-2xl font-extrabold text-gray-800'>Todos los articulos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre articulo</th>
+                        <th>Marca Articulo</th>
+                        <th>Modelo articulo</th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td>Moto Crucero</td>
+                    <td>Honda</td>
+                    <td>2010</td>
+                </tr>
+                <tr>
+                    <td>Moto2</td>
+                    <td>Yamaha</td>
+                    <td>2021</td>
+                </tr>
+
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    )
+    
+}
+
+const FormularioCreacionArticulos=()=>{
+    return (
+        <div className = 'flex flex-col items-center justify-center'>
+            <h2 className = ' text-2xl font-extrabold text-gray-800'> CREAR NUEVO ARTICULO</h2>
+            <form className = 'grid grid-cols-2' >
+                <input className = 'bg-gray-100 border border-indigo-600 p-2 rounded-lg m-2' type="text" />
+                <input className = 'bg-gray-100 border border-indigo-600 p-2 rounded-lg m-2' type="text" />
+                <input className = 'bg-gray-100 border border-indigo-600 p-2 rounded-lg m-2' type="text" />
+                <input className = 'bg-gray-100 border border-indigo-600 p-2 rounded-lg m-2' type="text" />
+                <button className ='col-span-2 bg-green-400 p-2 rounded-full shadow-md hover:bg-green-700 text-white'>
+                    Guardar Articulo
+                </button>
+            </form>
+
+            
+        </div>
+    )
+}
+
+
+
 
 export default Articulos
