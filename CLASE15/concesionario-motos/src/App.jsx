@@ -18,6 +18,8 @@ function App() {
     domain="concesionario-vehiculos-21.us.auth0.com"
     clientId="iATEAudFgDuNlDEZokBDXuhY0m4jLawP"
     redirectUri={window.location.origin}
+    // redirectUri="http://localhost:3000/admin/"
+
     >
       <Router>
         <Switch>  
