@@ -1,28 +1,22 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Sidebar from '../components/Sidebar'
-import { useAuth0 } from "@auth0/auth0-react";
+import PrivateRoute from "components/PrivateRoute"
 
 
-
-const PrivateLayout = ({ children }) => {
-    const { user, isAuthenticated, isLoading } = useAuth0();
-
-    useEffect(() => {
-        console.log (user, isAuthenticated, isLoading); 
-           
-        
-    }, [user, isAuthenticated, isLoading])
-
+const PrivateLayout = ({ children }) => { 
 
     return (
-        <div className = ' flex w-screen h-screen'>
-            <div className = 'flex flex-nowrap h-full w-full'>
-                <Sidebar />
-                <main className = 'flex w-full  overflow-y-scroll items-center justify-center'>{ children }</main>
+        <PrivateRoute>
+        
+            <div className = ' flex w-screen h-screen'>
+                <div className = 'flex flex-nowrap h-full w-full'>
+                    <Sidebar />
+                    <main className = 'flex w-full  overflow-y-scroll items-center justify-center'>{ children }</main>
 
+                </div>
+                
             </div>
-            
-        </div>
+        </PrivateRoute>
     )
 }
 
