@@ -22,10 +22,10 @@ function App() {
   return (
     <div className='App'>
       <Auth0Provider
-        domain="misiontic-concesionario-motos.us.auth0.com"
-        clientId="0fgnn4WsqOHlrBzsLpZd1ojxKnmnKRYT"
+        domain="concesionario-vehiculos-21.us.auth0.com"
+        clientId="iATEAudFgDuNlDEZokBDXuhY0m4jLawP"
         redirectUri="http://localhost:3000/admin/"
-        audience="https://misiontic-concesionario-motos.us.auth0.com/api/v2/"
+        audience="api-autenticacion-concesionario-motos21"
       >
         <DarkModeContext.Provider value={{ darkMode, setDarkMode }}>
           <Router>

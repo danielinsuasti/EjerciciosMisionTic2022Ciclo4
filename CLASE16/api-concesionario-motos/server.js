@@ -26,10 +26,10 @@ var jwtCheck = jwt({
     cache: true,
     rateLimit: true,
     jwksRequestsPerMinute: 5,
-    jwksUri: 'https://misiontic-concesionario-motos.us.auth0.com/.well-known/jwks.json',
+    jwksUri: 'https://concesionario-vehiculos-21.us.auth0.com/.well-known/jwks.json',
   }),
-  audience: 'api-autenticacion-concesionario-motos',
-  issuer: 'https://misiontic-concesionario-motos.us.auth0.com/',
+  audience: 'api-autenticacion-concesionario-motos21',
+  issuer: 'https://concesionario-vehiculos-21.us.auth0.com/',
   algorithms: ['RS256'],
 });
 

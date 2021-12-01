@@ -18,7 +18,7 @@ const Vehiculos = () => {
   useEffect(() => {
     const gat = async () => {
       const accessToken = await getAccessTokenSilently({
-        audience: `https://misiontic-concesionario-motos.us.auth0.com/api/v2/`,
+        audience: `api-autenticacion-concesionario-motos21`,
       });
       console.log('access token', accessToken);
     };
