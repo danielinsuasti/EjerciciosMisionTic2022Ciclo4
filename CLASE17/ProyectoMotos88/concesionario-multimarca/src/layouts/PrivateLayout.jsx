@@ -24,7 +24,7 @@ const PrivateLayout = ({ children }) => {
       // 1. pedir token a auth0
       setLoadingUserInformation(true);
       const accessToken = await getAccessTokenSilently({
-        audience: `api-autenticacion-concesionario-motos`,
+        audience: `api-autenticacion-misiontic-motos-test`,//CCambiar, Tener cuidado
       });
       // 2. recibir token de auth0
       localStorage.setItem('token', accessToken);

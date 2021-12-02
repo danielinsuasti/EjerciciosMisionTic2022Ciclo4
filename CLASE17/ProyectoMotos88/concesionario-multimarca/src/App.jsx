@@ -25,10 +25,10 @@ function App() {
 
   return (
     <Auth0Provider
-      domain='misiontic-concesionario-motos.us.auth0.com'
-      clientId='0fgnn4WsqOHlrBzsLpZd1ojxKnmnKRYT'
+      domain='misiontic-motos-test.us.auth0.com' //Modificar
+      clientId='5F5IWcNueK5yujJjTsAU1M3hrfiOvDqJ'         //Modificar
       redirectUri='http://localhost:3000/admin'
-      audience='api-autenticacion-concesionario-motos'
+      audience='api-autenticacion-misiontic-motos-test'//Cuidado para Modificar!!
     >
       <div className='App'>
         <UserContext.Provider value={{ userData, setUserData }}>

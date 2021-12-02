@@ -26,10 +26,10 @@ var jwtCheck = jwt({
     cache: true,
     rateLimit: true,
     jwksRequestsPerMinute: 5,
-    jwksUri: 'https://misiontic-concesionario-motos.us.auth0.com/.well-known/jwks.json',
+    jwksUri: 'https://misiontic-motos-test.us.auth0.com/.well-known/jwks.json',//modificar
   }),
-  audience: 'api-autenticacion-concesionario-motos',
-  issuer: 'https://misiontic-concesionario-motos.us.auth0.com/',
+  audience: 'api-autenticacion-misiontic-motos-test', //modificar
+  issuer: 'https://misiontic-motos-test.us.auth0.com/',//modificar
   algorithms: ['RS256'],
 });
 
